@@ -1,3 +1,4 @@
+// LISTS INDEX CARD
 .card-lists {
   display: flex;
   align-content: center;
@@ -30,4 +31,24 @@
   font-size: 54px;
   font-weight: bold;
   width: 200px;
+}
+
+// LIST SHOW AND MOVIE CARD
+
+.movies-card {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.movie-card {
+  padding: 8px;
+}
+
+.header-list-card {
+  display: flex;
+  justify-content: space-between;
+}
+
+.header-title {
+  display: flex;
 }

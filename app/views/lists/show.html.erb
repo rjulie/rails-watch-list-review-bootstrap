@@ -17,18 +17,22 @@
     <% @bookmarks.each do |bookmark| %>
       <div class="movie-card">
         <%= image_tag(bookmark.movie.poster_url, height: '400', class:"movie-poster") %>
-        <div class="rating-tag">
-          <h4><%= bookmark.movie.rating.round(2) %></h4>
-        </div>
-        <div class="movie-card-footer">
-          <div class="movie-card-text">
-            <h2><%= bookmark.movie.title %></h2>
-            <p><%= bookmark.comment %></p>
+
+        <div class="movie-card-infos">
+          <div class="rating-tag">
+            <h4><%= bookmark.movie.rating.ceil(2) %></h4>
           </div>
-          <%= link_to bookmark_path(bookmark),
-          data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to remove #{bookmark.movie.title} from your #{@list.name} list"} do %>
-            <i class="fa fa-minus-circle"></i>
-          <% end %>
+
+          <div class="movie-card-footer">
+            <div class="movie-card-text">
+              <h2><%= bookmark.movie.title %></h2>
+              <p><%= bookmark.comment %></p>
+            </div>
+            <%= link_to bookmark_path(bookmark),
+            data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to remove #{bookmark.movie.title} from your #{@list.name} list"} do %>
+              <i class="fa fa-minus-circle"></i>
+            <% end %>
+          </div>
         </div>
       </div>
     <% end %>

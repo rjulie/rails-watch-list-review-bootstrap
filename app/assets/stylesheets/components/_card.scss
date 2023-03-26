@@ -38,7 +38,6 @@
 .movies-card {
   display: flex;
   flex-wrap: wrap;
-  // position: relative;
 }
 
 .movie-card {
@@ -73,6 +72,10 @@
   }
 }
 
+.movie-card-infos {
+  position: relative;
+}
+
 .rating-tag {
   background-color: white;
   border: 1px solid black;
@@ -80,9 +83,9 @@
   border-radius: 4px;
   width: 42px;
   text-align: center;
-  // position: absolute;
-  // top: 0px;
-  // right: 0px;
+  position: absolute;
+  top: -40px;
+  right: 10px;
 }
 
 .movie-card-footer {

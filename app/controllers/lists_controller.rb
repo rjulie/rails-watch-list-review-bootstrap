@@ -8,6 +8,7 @@ class ListsController < ApplicationController
     @list = List.find(params[:id])
     # @bookmark = Bookmark.new
     @bookmarks = Bookmark.where(list_id: @list)
+    @bookmark = Bookmark.new
   end
 
   def new

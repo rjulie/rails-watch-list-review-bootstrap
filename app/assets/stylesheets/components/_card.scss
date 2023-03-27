@@ -5,6 +5,8 @@
   overflow-x: scroll;
   height: 24vh;
   padding-top: 8px;
+  padding-left: 120px;
+  padding-right: 120px;
 }
 
 .card-list {
@@ -38,6 +40,7 @@
 .movies-card {
   display: flex;
   flex-wrap: wrap;
+  min-height: 74vh;
 }
 
 .movie-card {

@@ -110,3 +110,32 @@
     margin: 0px 8px ;
   }
 }
+
+// REVIEW CARD
+
+.rating-tag-review {
+  background-color: black;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 30px;
+  text-align: center;
+
+  h4 {
+    font-size: 16px;
+    color: white;
+    margin: 0;
+  }
+}
+
+.comment-review {
+  padding-left: 16px;
+  margin-bottom: 24px;
+}
+
+.review-card {
+  display: flex;
+  width: 80%;
+}

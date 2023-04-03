@@ -44,27 +44,39 @@
     <% end %>
   </div>
 
-  <hr/>
+
 
 
   <%# REVIEWS %>
 
-  <div>
+  <div class="reviews-card">
+    <div class="header-list-card">
+    <div class="header-title">
+      <h3>Reviews</h3>
+    </div>
+    <div class="header-button">
+    <button type="button" class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#reviewModal">
+      Add a review
+    </button>
+    </div>
+    </div>
+
+    <hr/>
+
     <%# ALL REVIEWS %>
-    <h2>Reviews</h2>
-    <div>
+    <div class="reviews-card">
       <% @reviews.each do |review| %>
-        <div>
-          <p><%= review.rating %></p>
-          <p><%= review.comment %></p>
+        <div class="review-card">
+          <div class="rating-tag-review">
+            <h4><%= review.rating %></h4>
+          </div>
+          <p class="comment-review"><%= review.comment %></p>
         </div>
       <% end %>
     </div>
 
     <%# NEW REVIEW %>
-    <button type="button" class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#reviewModal">
-      Add a review
-    </button>
+
 
   </div>
 

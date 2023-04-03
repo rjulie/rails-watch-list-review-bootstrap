@@ -46,9 +46,30 @@
 
   <hr/>
 
-  <%# REVIEWS %>
-  <h2>Reviews</h2>
 
+  <%# REVIEWS %>
+
+  <div>
+    <%# ALL REVIEWS %>
+    <h2>Reviews</h2>
+    <div>
+      <% @reviews.each do |review| %>
+        <div>
+          <p><%= review.rating %></p>
+          <p><%= review.comment %></p>
+        </div>
+      <% end %>
+    </div>
+
+    <%# NEW REVIEW %>
+    <%= simple_form_for [@list, @review] do |f| %>
+      <div >
+        <%= f.input :rating, placeholder: "Rating"  %>
+        <%= f.input :comment, placeholder: "Add your review"  %>
+        <%= f.button :submit %>
+      </div>
+    <% end %>
+  </div>
 
 </div>
 

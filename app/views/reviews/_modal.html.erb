@@ -1,0 +1,23 @@
+<div class="modal fade" id="reviewModal" tabindex="-1" aria-labelledby="reviewModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="reviewModalLabel">Add a review about <%= list.name %> list</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <div class="modal-body">
+        <%= simple_form_for [list, review] do |f| %>
+          <div class="modal-body">
+            <%= f.input :comment, placeholder: "Add your review"  %>
+            <%= f.input :rating, collection: (1..5).to_a, input_html: {data: {controller: "star-rating"}}  %>
+          </div>
+
+          <div class="modal-footer">
+            <%= f.button :submit, 'Save review' %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

@@ -62,15 +62,13 @@
     </div>
 
     <%# NEW REVIEW %>
-    <%= simple_form_for([@list, @review]) do |f| %>
-      <div>
-        <%= f.input :comment, placeholder: "Add your review"  %>
-        <%= f.input :rating, collection: (1..5).to_a, input_html: {data: {controller: "star-rating"}}  %>
-        <%= f.button :submit, 'Save review' %>
-      </div>
-    <% end %>
+    <button type="button" class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#reviewModal">
+      Add a review
+    </button>
+
   </div>
 
 </div>
 
 <%= render 'bookmarks/modal', bookmark: @bookmark, list: @list %>
+<%= render 'reviews/modal', review: @review, list: @list %>

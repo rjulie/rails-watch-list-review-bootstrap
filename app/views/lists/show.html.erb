@@ -62,11 +62,11 @@
     </div>
 
     <%# NEW REVIEW %>
-    <%= simple_form_for [@list, @review] do |f| %>
-      <div >
-        <%= f.input :rating, placeholder: "Rating"  %>
+    <%= simple_form_for([@list, @review]) do |f| %>
+      <div>
         <%= f.input :comment, placeholder: "Add your review"  %>
-        <%= f.button :submit %>
+        <%= f.input :rating, collection: (1..5).to_a, input_html: {data: {controller: "star-rating"}}  %>
+        <%= f.button :submit, 'Save review' %>
       </div>
     <% end %>
   </div>

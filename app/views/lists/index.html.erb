@@ -1,11 +1,25 @@
-<h1>All lists</h1>
-
-<% @lists.each do |list| %>
-  <div>
-    <p><%= link_to list.name, list_path(list) %></p>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1536440136628-849c177e76a1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1625&q=80);">
+  <div class="container">
+    <h1>Save your favorite movies in lists</h1>
+    <p>Keep in mind favorite movies and all reviews associated.</p>
   </div>
-<% end %>
+</div>
 
-<%# <%= link_to new_list_path do %>
-<%# <% end %>
-<%= link_to "New list", new_list_path %>
+<div>
+  <div class="card-lists">
+    <% @lists.each do |list| %>
+      <%= link_to list_path(list) do %>
+        <div class="card-list" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path list.photo.key, crop: :fill %>');">
+          <h3><%= list.name.capitalize %></h3>
+        </div>
+      <% end %>
+    <% end %>
+    <div>
+
+    <%= link_to new_list_path do %>
+      <div class="card-new-list card-list">
+        <i class="fa fa-plus"></i>
+      </div>
+    <% end %>
+  </div>
+</div>

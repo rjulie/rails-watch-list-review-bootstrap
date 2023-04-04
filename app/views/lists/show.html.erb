@@ -1,22 +1,86 @@
-<h1><%= @list.name %></h1>
+<div class="container">
 
-<% @bookmarks.each do |bookmark| %>
+  <%# HEADER LIST AND NEW BUTTON %>
+  <div class="header-list-card">
+    <div class="header-title">
+      <%= link_to lists_path do %>
+        <i class="fas fa-chevron-circle-left"></i>
+      <% end %>
+      <h1><%= @list.name %></h1>
+    </div>
+    <div class="header-button">
+      <%# <%= link_to "Add a new movie", new_list_bookmark_path(@list), class: "btn btn-outline-dark" %>
+      <button type="button" class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#bookMarkModal">
+        Add a movie
+      </button>
+    </div>
+  </div>
 
-  <div class="movie-card">
-    <%= image_tag(bookmark.movie.poster_url, height: '500', class:"movie-poster") %>
-    <h4><%= bookmark.movie.title %></h4>
-    <p><%= bookmark.comment %></p>
+  <hr/>
 
-    <%= link_to bookmark_path(bookmark),
-     data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to remove #{bookmark.movie.title} from your #{@list.name} list"} do %>
-      <i class="fa fa-minus-circle"></i>
+  <%# MOVIES %>
+  <div class="movies-card">
+    <% @bookmarks.each do |bookmark| %>
+      <div class="movie-card">
+        <%= image_tag(bookmark.movie.poster_url, height: '400', class:"movie-poster") %>
+
+        <div class="movie-card-infos">
+          <div class="rating-tag">
+            <h4><%= bookmark.movie.rating.ceil(2) %></h4>
+          </div>
+
+          <div class="movie-card-footer">
+            <div class="movie-card-text">
+              <h2><%= bookmark.movie.title %></h2>
+              <p><%= bookmark.comment %></p>
+            </div>
+            <%= link_to bookmark_path(bookmark),
+            data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to remove #{bookmark.movie.title} from your #{@list.name} list"} do %>
+              <i class="fa fa-minus-circle"></i>
+            <% end %>
+          </div>
+        </div>
+      </div>
     <% end %>
   </div>
 
-<% end %>
 
 
-<%= link_to "Add a new movie", new_list_bookmark_path(@list) %>
+
+  <%# REVIEWS %>
+
+  <div class="reviews-card">
+    <div class="header-list-card">
+    <div class="header-title">
+      <h3>Reviews</h3>
+    </div>
+    <div class="header-button">
+    <button type="button" class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#reviewModal">
+      Add a review
+    </button>
+    </div>
+    </div>
+
+    <hr/>
+
+    <%# ALL REVIEWS %>
+    <div class="reviews-card">
+      <% @reviews.each do |review| %>
+        <div class="review-card">
+          <div class="rating-tag-review">
+            <h4><%= review.rating %></h4>
+          </div>
+          <p class="comment-review"><%= review.comment %></p>
+        </div>
+      <% end %>
+    </div>
+
+    <%# NEW REVIEW %>
 
 
-<%= link_to "All lists", lists_path %>
+  </div>
+
+</div>
+
+<%= render 'bookmarks/modal', bookmark: @bookmark, list: @list %>
+<%= render 'reviews/modal', review: @review, list: @list %>

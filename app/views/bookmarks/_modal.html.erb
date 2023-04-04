@@ -1,0 +1,23 @@
+<div class="modal fade" id="bookMarkModal" tabindex="-1" aria-labelledby="bookMarkModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="bookMarkModalLabel">Add a movie to your <%= list.name %> list</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+
+      <%= simple_form_for [list, bookmark] do |f| %>
+        <div class="modal-body">
+          <%= f.association :movie, collection: Movie.all.order(:title), placeholder: "Select a movie", input_html: {data: {controller: "tom-select"}}  %>
+          <%= f.input :comment, placeholder: "Enter a comment about the movie"  %>
+        </div>
+        <div class="modal-footer">
+          <%= f.button :submit %>
+        </div>
+      <% end %>
+
+      </div>
+    </div>
+  </div>
+</div>

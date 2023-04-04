@@ -1,0 +1,140 @@
+// LISTS INDEX CARD
+.card-lists {
+  display: flex;
+  align-content: center;
+  overflow-x: scroll;
+  height: 24vh;
+  padding-top: 8px;
+  padding-left: 120px;
+  padding-right: 120px;
+}
+
+.card-list {
+  background-size: cover;
+  background-position: center;
+  height: 150px;
+  width: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  padding: 8px;
+  margin: 8px;
+}
+
+.card-new-list {
+  background-color: #f4f4f4;
+  color: white;
+  font-size: 54px;
+  font-weight: bold;
+  width: 200px;
+}
+
+// LIST SHOW AND MOVIE CARD
+
+.movies-card {
+  display: flex;
+  flex-wrap: wrap;
+  min-height: 74vh;
+}
+
+.movie-card {
+  margin: 8px;
+  overflow: hidden;
+  width: 260px;
+
+  img {
+    height: 400px;
+    width: 100%;
+    object-fit: cover;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    border-radius: 8px;
+  }
+
+  h2 {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0;
+  }
+
+  h4 {
+    font-size: 16px;
+    color: black;
+    margin: 0;
+  }
+
+  p {
+    font-size: 14px;
+    opacity: .7;
+    margin: 0;
+  }
+}
+
+.movie-card-infos {
+  position: relative;
+}
+
+.rating-tag {
+  background-color: white;
+  border: 1px solid black;
+  padding: 4px 8px;
+  border-radius: 4px;
+  width: 42px;
+  text-align: center;
+  position: absolute;
+  top: -40px;
+  right: 10px;
+}
+
+.movie-card-footer {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 8px;
+}
+
+.header-list-card {
+  display: flex;
+  justify-content: space-between;
+}
+
+.header-title {
+  display: flex;
+  align-items: center;
+
+  h1 {
+    margin: 0px 8px ;
+  }
+}
+
+// REVIEW CARD
+
+.rating-tag-review {
+  background-color: black;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 30px;
+  text-align: center;
+
+  h4 {
+    font-size: 16px;
+    color: white;
+    margin: 0;
+  }
+}
+
+.comment-review {
+  padding-left: 16px;
+  margin-bottom: 24px;
+}
+
+.review-card {
+  display: flex;
+}
